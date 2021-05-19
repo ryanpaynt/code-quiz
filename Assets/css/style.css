@@ -19,3 +19,8 @@ section p{
     width: 50%;
     text-align: center;
 }
+
+a{
+    color: black;
+    text-decoration: none;
+}
