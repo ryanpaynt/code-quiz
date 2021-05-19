@@ -4,6 +4,7 @@
 
 header{
     margin: auto;
+    margin-top: 150px;
     width: 50%;
     text-align: center;
 }
@@ -21,8 +22,18 @@ section{
 
 li {
     list-style: none;
+    margin-top: 8px;
 }
 
 hr{
-
+    margin-top: 32px;
 }
+
+p{
+    position: fixed;
+    color: gray;
+    font-style: italic;
+    margin-left: -120px;
+    margin-top: -8px;
+}
+

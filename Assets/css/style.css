@@ -4,20 +4,24 @@
 
 header{
     margin: auto;
+    margin-top: 150px;
     width: 50%;
     text-align: center;
 }
 
 section p{
     margin: auto;
+    margin-top: 50px;
     width: 50%;
     text-align: center;
 }
 
 .button{
     margin: auto;
+    margin-top: 25px;
     width: 50%;
     text-align: center;
+    padding: 24px;
 }
 
 a{
