@@ -1,0 +1,23 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    transform: translateX(35%);
+    position: relative;
+    margin-top: 100px;
+}
+
+section p{
+    display: block;
+    width: 500px;
+    transform: translateX(300px);
+    margin-top: 30px;
+}
+button{
+    transform: translateX(500px);
+}
+
+button:hover{
+    cursor: pointer;
+}
