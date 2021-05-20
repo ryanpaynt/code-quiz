@@ -69,7 +69,11 @@ var questions = [
         'tags',
         'flags'
     ],
-    correct: 2}
+    correct: 2},
+
+    {title: "",
+    answers: [],
+    correct: null}
 ]
 
 renderQuestion();
@@ -82,11 +86,20 @@ function renderQuestion() {
     for(var i = 0; i < questions[stage].answers.length; i++){
         var answer = questions[stage].answers[i];
         console.log(answer);
+        if(stage === 0){
         var btnEl = document.createElement("button");
         btnEl.textContent = answer;
         btnEl.setAttribute("class", "btnEl");
         btnEl.setAttribute("data-index", i);
         sec.appendChild(btnEl);
+        } else {
+            var btnEl = document.querySelector("button");  
+            btnEl.textContent = answer;
+            btnEl.setAttribute("class", "btnEl");
+            btnEl.setAttribute("data-index", i);
+            sec.appendChild(btnEl);  
+        }
+        
     }
 }
 
@@ -98,16 +111,14 @@ sec.addEventListener("click", function(event){
         console.log(index, questions[stage].correct);
         console.log(index === questions[stage].correct);
         if(index === questions[stage].correct && stage < questions.length -1){
-        element.setAttribute("style", "background-color: green;")
         stage ++;
         renderQuestion();
-        } else {
+    } else {
+
             alert("END OF QUIZ");
         }
     }
 });
-
-
 
 // function countdown() {
   
