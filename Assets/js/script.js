@@ -108,9 +108,12 @@ sec.addEventListener("click", function(event){
     console.log(element);
     if(element.matches("button")){
         var index = parseInt(element.dataset.index);
-        console.log(index, questions[stage].correct);
-        console.log(index === questions[stage].correct);
-        if(index === questions[stage].correct && stage < questions.length -1){
+        if(stage < questions.length -1){
+            if(index === questions[stage].correct){
+                checkAns.textContent = "Correct!"
+            }else{
+                checkAns.textContent = "Incorrect!"
+            }
         stage ++;
         renderQuestion();
     } else {

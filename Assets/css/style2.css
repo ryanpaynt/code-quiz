@@ -3,6 +3,18 @@
 }
 
 header{
+    width: 100%;
+}
+
+.timer{
+    display: inline;
+    float: right;
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.question{
     margin: auto;
     margin-top: 150px;
     width: 50%;
@@ -38,8 +50,7 @@ hr{
     width: 372px;
 }
 
-p{
-    position: fixed;
+.ans{
     color: gray;
     font-style: italic;
     margin-left: -120px;
