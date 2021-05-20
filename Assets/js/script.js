@@ -24,77 +24,109 @@ event.target
 */
 
 var questionEl = document.querySelector('h1');
-var answer1 = document.querySelector('.but1');
-var answer2 = document.querySelector('.but2');
-var answer3 = document.querySelector('.but3');
-var answer4 = document.querySelector('.but4');
+var sec = document.querySelector('section');
+// var answer1 = document.querySelector('.but1');
+// var answer2 = document.querySelector('.but2');
+// var answer3 = document.querySelector('.but3');
+// var answer4 = document.querySelector('.but4');
 var checkAns = document.querySelector('.ans');
 
-var isCorrect = null;
 var score = 0;
-var timer;
-var timerCount;
+var timeLeft;
+var stage = 0;
 
-var questions = ["Commonly used data types in HTML DO NOT include?",
- "This simple datatype holds multiple values?",
-  "Elements in an HTML that display onto the webpage?"];
-var firstButton = ["footer", "array", "rags"];
-var secondButton = ["backer", "list", "bags"];
-var thirdButton = ["header", "Queue", "tags"];
-var fourthButton = ["section", "Tree", "flags"];
-checkAns.innerHTML = " ";
+// var questions = ["Commonly used data types in HTML DO NOT include?",
+//  "This simple datatype holds multiple values?",
+//   "Elements in an HTML that display onto the webpage?"];
+// var firstButton = ["footer", "array", "rags"];
+// var secondButton = ["backer", "list", "bags"];
+// var thirdButton = ["header", "Queue", "tags"];
+// var fourthButton = ["section", "Tree", "flags"];
 
-startGame();
+var questions = [
+    { title: "Commonly used data types in HTML DO NOT include?",
+    answers: [
+        'footer',
+        'backer',
+        'header',
+        'section'
+    ],
+    correct: 1},
 
-function startGame() {
-    isCorrect = null;
-    timerCount = 15;
-    startTimer();
-    
-    // for(var i = 0; i<questions.length; i++){
-        questionEl.innerHTML = questions[0];
-        answer1.innerHTML = firstButton[0];
-        answer2.innerHTML = secondButton[0];
-        answer3.innerHTML = thirdButton[0];
-        answer4.innerHTML = fourthButton[0];
-        checkQuestion();
-        correct();
-    // }
-}
+    { title: "This simple datatype holds multiple values?",
+    answers: [
+        'array',
+        'cup',
+        'bucket',
+        'bag'
+    ],
+    correct: 0},
 
-function checkQuestion(){
-    answer2.addEventListener("click", function(){
-        isCorrect = true;
-    });
-}
+    { title: "Elements in an HTML that display onto the webpage?",
+    answers: [
+        'rags',
+        'bags',
+        'tags',
+        'flags'
+    ],
+    correct: 2}
+]
 
-function correct(){
-    if(isCorrect === true){
-        checkAns.innerHTML = "Correct!";
-    } else {
-        checkAns.innerHTML = "Incorrect!";
+renderQuestion();
+//countdown();
+
+function renderQuestion() {
+    var question = questions[stage].title;
+    questionEl.textContent = question;
+
+    for(var i = 0; i < questions[stage].answers.length; i++){
+        var answer = questions[stage].answers[i];
+        console.log(answer);
+        var btnEl = document.createElement("button");
+        btnEl.textContent = answer;
+        btnEl.setAttribute("class", "btnEl");
+        btnEl.setAttribute("data-index", i);
+        sec.appendChild(btnEl);
     }
 }
 
-function startTimer() {
-    // Sets timer
-    timer = setInterval(function() {
-      timerCount--;
-      if (timerCount >= 0) {
-        // Tests if win condition is met
-        if (timerCount > 0) {
-          // Clears interval and stops timer
-          clearInterval(timer);
-          winGame();
+sec.addEventListener("click", function(event){
+    var element = event.target;
+    console.log(element);
+    if(element.matches("button")){
+        var index = parseInt(element.dataset.index);
+        console.log(index, questions[stage].correct);
+        console.log(index === questions[stage].correct);
+        if(index === questions[stage].correct && stage < questions.length -1){
+        element.setAttribute("style", "background-color: green;")
+        stage ++;
+        renderQuestion();
+        } else {
+            alert("END OF QUIZ");
         }
-      }
-      // Tests if time has run out
-      if (timerCount === 0) {
-        // Clears interval
-        clearInterval(timer);
-        finishGame()
-      }
-      console.log(timerCount);
-    }, 1500);
-  }
+    }
+});
 
+
+
+// function countdown() {
+  
+//     timeLeft = 15;
+//     // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+//     var timeInterval = setInterval(function () {
+      
+//       // YOUR CODE HERE
+//       timeLeft--;
+//       if(timeLeft === 0){
+//         alert("OUT OF TIME!");
+//         clearInterval(timeInterval);
+//       }
+//       console.log(timeLeft);
+//     }, 1000);
+//   }
+
+
+//function subfromtime(){
+//     count -= 10;
+
+// }
