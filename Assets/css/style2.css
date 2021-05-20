@@ -40,20 +40,17 @@ li{
 }
 
 button {
-    margin-top: 8px;
     display: flex;
-    width: 80px;
+    width: 120px;
 }
 
 hr{
-    margin-top: 32px;
     width: 372px;
+    margin-bottom: 8px;
 }
 
 .ans{
     color: gray;
     font-style: italic;
-    margin-left: -120px;
-    margin-top: -8px;
 }
 
