@@ -24,13 +24,13 @@ event.target
 */
 
 var questionEl = document.querySelector('h1');
-var answer1 = document.querySelector('.butt1');
-var answer2 = document.querySelector('.butt2');
-var answer3 = document.querySelector('.butt3');
-var answer4 = document.querySelector('.butt4');
+var answer1 = document.querySelector('.but1');
+var answer2 = document.querySelector('.but2');
+var answer3 = document.querySelector('.but3');
+var answer4 = document.querySelector('.but4');
 var checkAns = document.querySelector('.ans');
 
-var isCorrect = false;
+var isCorrect = null;
 var score = 0;
 var timer;
 var timerCount;
@@ -38,40 +38,51 @@ var timerCount;
 var questions = ["Commonly used data types in HTML DO NOT include?",
  "This simple datatype holds multiple values?",
   "Elements in an HTML that display onto the webpage?"];
-var firstButton = ["<footer>", "array", "rags"];
-var secondButton = ["<backer>", "list", "bags"];
-var thirdButton = ["<header>", "Queue", "tags"];
-var fourthButton = ["<section>", "Tree", "flags"];
+var firstButton = ["footer", "array", "rags"];
+var secondButton = ["backer", "list", "bags"];
+var thirdButton = ["header", "Queue", "tags"];
+var fourthButton = ["section", "Tree", "flags"];
+checkAns.innerHTML = " ";
 
-questionEl.innerHTML = questions[0];
+startGame();
 
 function startGame() {
-    isCorrect = false;
+    isCorrect = null;
     timerCount = 15;
     startTimer();
     
-    for(var i = 0; i<questions.length; i++){
-        questionEl.innerHTML = questions[i];
-        answer1.innerHTML = firstButton[i];
-        answer2.innerHTML = secondButton[i];
-        answer3.innerHTML = thirdButton[i];
-        answer4.innerHTML = fourthButton[i];
+    // for(var i = 0; i<questions.length; i++){
+        questionEl.innerHTML = questions[0];
+        answer1.innerHTML = firstButton[0];
+        answer2.innerHTML = secondButton[0];
+        answer3.innerHTML = thirdButton[0];
+        answer4.innerHTML = fourthButton[0];
         checkQuestion();
-    }
+        correct();
+    // }
 }
 
 function checkQuestion(){
+    answer2.addEventListener("click", function(){
+        isCorrect = true;
+    });
+}
 
+function correct(){
+    if(isCorrect === true){
+        checkAns.innerHTML = "Correct!";
+    } else {
+        checkAns.innerHTML = "Incorrect!";
+    }
 }
 
 function startTimer() {
     // Sets timer
     timer = setInterval(function() {
       timerCount--;
-      timerElement.textContent = timerCount;
       if (timerCount >= 0) {
         // Tests if win condition is met
-        if (isWin && timerCount > 0) {
+        if (timerCount > 0) {
           // Clears interval and stops timer
           clearInterval(timer);
           winGame();

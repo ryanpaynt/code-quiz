@@ -14,10 +14,11 @@ section{
     width: 50%;
 }
 
-.button{
+button{
     margin: auto;
-    width: 50%;
+    width: 300px;
     text-align: center;
+
 }
 
 li {
