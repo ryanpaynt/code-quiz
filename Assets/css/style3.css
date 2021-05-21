@@ -26,17 +26,38 @@ section{
     width: 50%;
 }
 
+div{
+    width: 50%;
+    display: flex;
+    margin-right: 0px;
+}
+
 button{
     margin: auto;
-    width: 300px;
+    width: 100px;
     text-align: center;
 
 }
 
+.list{
+    margin: auto;
+    width: 50%;
+}
+
+ul{
+    list-style: none;
+    transform: translateX(100px);
+}
+
 li{
     list-style: none;
-    display: block;
-    flex: 0 1 auto;
+    transform: translateX(-65px);
+    margin-bottom: 24px;
+    background-color: green;
+    border: dotted 4px greenyellow;
+    color: white;
+    padding: 12px;
+    width: 50%;
 }
 
 button {
@@ -44,9 +65,13 @@ button {
     width: 120px;
 }
 
+button:hover{
+    background-color: green;
+}
+
 .container{
     width: 600px;
-    margin-left: -200px;
+    transform: translateX(100px);
 }
 
 #submit{

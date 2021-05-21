@@ -1,10 +1,6 @@
 var questionEl = document.querySelector('h1');
 var sec = document.querySelector('section');
 var timerText = document.querySelector('.timer');
-// var answer1 = document.querySelector('.but1');
-// var answer2 = document.querySelector('.but2');
-// var answer3 = document.querySelector('.but3');
-// var answer4 = document.querySelector('.but4');
 var checkAns = document.querySelector('.ans');
 
 var score = 0;
@@ -85,7 +81,7 @@ function renderQuestion() {
 
     for(var i = 0; i < questions[stage].answers.length; i++){
         var answer = questions[stage].answers[i];
-        console.log(answer);
+
         if(stage === 0){
         var btnEl = document.createElement("button");
         btnEl.textContent = answer;
@@ -111,6 +107,7 @@ sec.addEventListener("click", function(event){
         if(stage < questions.length -1){
             if(index === questions[stage].correct){
                 checkAns.textContent = "Correct!"
+                score ++;
             }else{
                 checkAns.textContent = "Incorrect!"
                 subFromTime();
@@ -134,7 +131,15 @@ function countdown() {
           timeLeft = 0;
         timerText.textContent = "Time: " + timeLeft + 's';
         alert("OUT OF TIME!");
+        localStorage.setItem('Score', score);
         clearInterval(timeInterval);
+        window.location = 'file:///Users/ryanpaynter/Homework-UNCCBC/code-quiz/index3.html?fname=';
+      } else if(stage === 6){
+        timeLeft = 0;
+        timerText.textContent = "Time: " + timeLeft + 's';
+        alert("END OF QUIZ!");
+        localStorage.setItem('Score', score);
+        window.location = 'file:///Users/ryanpaynter/Homework-UNCCBC/code-quiz/index3.html?fname=';
       }
     timerText.textContent = "Time: " + timeLeft + 's';
     }, 1000);
