@@ -14,7 +14,6 @@ submitButton.addEventListener("click", function(event) {
 function addListItem(){
     var node = document.createElement('li');
     node.appendChild(document.createTextNode("Initials: " + input + "\nScore: " + score))
-    
     document.querySelector('ul').appendChild(node);
     
 }

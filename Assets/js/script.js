@@ -133,13 +133,13 @@ function countdown() {
         alert("OUT OF TIME!");
         localStorage.setItem('Score', score);
         clearInterval(timeInterval);
-        window.location = 'file:///Users/ryanpaynter/Homework-UNCCBC/code-quiz/index3.html?fname=';
+        window.location = 'file:///Users/ryanpaynter/Homework-UNCCBC/code-quiz/code-quiz/index3.html';
       } else if(stage === 6){
         timeLeft = 0;
         timerText.textContent = "Time: " + timeLeft + 's';
         alert("END OF QUIZ!");
         localStorage.setItem('Score', score);
-        window.location = 'file:///Users/ryanpaynter/Homework-UNCCBC/code-quiz/index3.html?fname=';
+        window.location = 'file:///Users/ryanpaynter/Homework-UNCCBC/code-quiz/code-quiz/index3.html';
       }
     timerText.textContent = "Time: " + timeLeft + 's';
     }, 1000);
