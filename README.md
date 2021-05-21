@@ -21,3 +21,15 @@ THEN I can save my initials and my score
 ```
 
 ## Screenshots
+
+<img src="./images/Screen Shot 2021-05-20 at 10.46.41 PM.jpg"/>
+<img src="./images/Screen Shot 2021-05-20 at 10.47.13 PM.jpg"/>
+<img src="./images/Screen Shot 2021-05-20 at 10.53.57 PM.jpg"/>
+
+## Website Links
+
+[GitHub Repo Link](https://github.com/ryanpaynt/password-generator/)
+
+
+
+
