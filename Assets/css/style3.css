@@ -39,17 +39,16 @@ button{
 
 }
 
-.list{
+.highscore{
     margin: auto;
     width: 50%;
 }
 
-ul{
-    list-style: none;
+ol{
     transform: translateX(100px);
 }
 
-li{
+/* li{
     list-style: none;
     transform: translateX(-65px);
     margin-bottom: 24px;
@@ -58,7 +57,7 @@ li{
     color: white;
     padding: 12px;
     width: 50%;
-}
+} */
 
 button {
     display: flex;
