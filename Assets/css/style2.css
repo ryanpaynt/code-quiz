@@ -6,6 +6,10 @@ header{
     width: 100%;
 }
 
+body{
+    background-color: #5CDB95;
+}
+
 .timer{
     display: inline;
     float: right;
