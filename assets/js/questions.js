@@ -89,7 +89,7 @@ function renderQuestion() {
         var answer = questions[stage].answers[i];
 
         if(stage === 0){
-        var btnEl = document.createElement("");
+        var btnEl = document.createElement("button");
         btnEl.textContent = answer;
         btnEl.setAttribute("class", "btnEl");
         btnEl.setAttribute("data-index", i);
