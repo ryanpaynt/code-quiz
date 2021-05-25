@@ -1,16 +1,20 @@
+/* global css element*/
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* background color and font color */
 body{
     background-color: #5CDB95;
     color: #05386B;
 }
 
+/* heading margin, color, and position */
 header{
     width: 100%;
 }
 
+/* formatting for the timer count down */
 .timer{
     display: inline;
     float: right;
@@ -19,6 +23,7 @@ header{
     font-weight: bold;
 }
 
+/* question formatting and size */
 .question{
     margin: auto;
     margin-top: 150px;
@@ -26,17 +31,20 @@ header{
     text-align: center;
 }
 
+/* section formatting */
 section{
     margin: auto;
     width: 50%;
 }
 
+/* div formatting */
 div{
     width: 50%;
     display: flex;
     margin-right: 0px;
 }
 
+/*button styling and formatting */
 button{
     margin: auto;
     width: 100px;
@@ -44,15 +52,18 @@ button{
 
 }
 
+/* highscore board format */
 .highscore{
     margin: auto;
     width: 50%;
 }
 
+/* ordered list format */
 ol{
     transform: translateX(100px);
 }
 
+/* more button sizing and formatting */
 button {
     display: flex;
     width: 120px;    
@@ -66,24 +77,28 @@ button {
     font-size: 16px;
 }
 
+/* hovering color */
 button:hover{
     background-color: green;
 }
-
+/* making sure the container is big enough for question items */
 .container{
     width: 600px;
     transform: translateX(100px);
 }
 
+/* submit button */
 #submit{
     float: right;
 }
 
+/* page breaks color and sizing*/
 hr{
     width: 372px;
     margin-bottom: 8px;
 }
 
+/* style of the answer that pops up after each question */
 .ans{
     color: gray;
     font-style: italic;
