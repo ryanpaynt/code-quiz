@@ -31,5 +31,5 @@ THEN I can save my initials and my score
 [GitHub Repo Link](https://github.com/ryanpaynt/code-quiz)
 
 
-[Website Link](file:///Users/ryanpaynter/Homework-UNCCBC/code-quiz/start-page.html)
+[Website Link](https://ryanpaynt.github.io/code-quiz)
 
