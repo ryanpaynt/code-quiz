@@ -1,12 +1,15 @@
+// multiple selectors
 var questionEl = document.querySelector('h1');
 var sec = document.querySelector('section');
 var timerText = document.querySelector('.timer');
 var checkAns = document.querySelector('.ans');
 
+//global vars
 var score = 0;
 var timeLeft;
 var stage = 0;
 
+//object containing question title, choices, and index of correct answer
 var questions = [
     { title: "Commonly used data types in HTML DO NOT include?",
     answers: [
@@ -72,9 +75,12 @@ var questions = [
     correct: 0}
 ]
 
+//method declaring
 countdown();
 renderQuestion();
 
+//render question uses a forloop to run through the question objects
+//and puts uses them to chnage the innerHTML of the lists
 function renderQuestion() {
     var question = questions[stage].title;
     questionEl.textContent = question;
@@ -83,7 +89,7 @@ function renderQuestion() {
         var answer = questions[stage].answers[i];
 
         if(stage === 0){
-        var btnEl = document.createElement("button");
+        var btnEl = document.createElement("");
         btnEl.textContent = answer;
         btnEl.setAttribute("class", "btnEl");
         btnEl.setAttribute("data-index", i);
@@ -99,6 +105,8 @@ function renderQuestion() {
     }
 }
 
+// when a button is pushed this listener will check if the button index
+//is the same as the one in the object. If they are it is correct. Otherwise seconds get taken off
 sec.addEventListener("click", function(event){
     var element = event.target;
     console.log(element);
@@ -119,13 +127,13 @@ sec.addEventListener("click", function(event){
     }
 });
 
+//countdown function produces a simple countdown. once the timer is down
+//if the questions run out or if the timer is doen a new window appears
 function countdown() {
   
     timeLeft = 30;
     timerText.textContent = "Time: " + timeLeft + 's';
-    // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
-      // YOUR CODE HERE
       timeLeft--;
       if(timeLeft <= 0){
           timeLeft = 0;
@@ -145,7 +153,7 @@ function countdown() {
     }, 1000);
   }
 
-
+//function that takes off time
 function subFromTime(){
     timeLeft -= 10;
 
