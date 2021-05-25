@@ -1,12 +1,15 @@
+/* global css element*/
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* background color and font color */
 body{
     background-color: #5CDB95;
     color: #05386B;
 }
 
+/* heading margin, color, and position */
 header{
     margin: auto;
     margin-top: 150px;
@@ -15,6 +18,7 @@ header{
     color: #05386B;
 }
 
+/* all p tags will be formatted and alligned */
 section p{
     margin: auto;
     margin-top: 50px;
@@ -23,6 +27,7 @@ section p{
 
 }
 
+/* buttons size and positioning */
 .button{
     margin: auto;
     margin-top: 25px;
@@ -31,8 +36,9 @@ section p{
     padding: 24px;
 }
 
+/* button content color, size, and formatting */
 a{
-    background-color: #05386B; /* Green */
+    background-color: #05386B;
     border: none;
     color: white;
     padding: 15px 32px;
