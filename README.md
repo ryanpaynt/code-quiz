@@ -28,7 +28,7 @@ THEN I can save my initials and my score
 
 ## Website Links
 
-[GitHub Repo Link](https://github.com/ryanpaynt/password-generator/)
+[GitHub Repo Link](https://github.com/ryanpaynt/code-quiz)
 
 
 [Website Link](https://ryanpaynt.github.io/code-quiz/)
