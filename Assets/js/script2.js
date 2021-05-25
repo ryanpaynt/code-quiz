@@ -1,3 +1,4 @@
+// multiple selectors
 var highscore = document.querySelector('.scores');
 var formEl = document.querySelector('.container');
 var score = localStorage.getItem('Score');
@@ -5,10 +6,11 @@ var input = document.querySelector("input[type=text]");
 highscore.textContent = "Your Score is: " + score;
 var scoreBoard = document.querySelector('.highScore');
 
-
+//storing in local storage
 var board = JSON.parse(localStorage.getItem('scoreBoard')) || [];
 renderHighScoreBoard();
 
+//once the button is pushed then initials and score are stored
 formEl.addEventListener('submit', function(event){
     event.preventDefault();
     var initials = input.value;
@@ -18,6 +20,7 @@ formEl.addEventListener('submit', function(event){
     localStorage.setItem('scoreBoard', JSON.stringify(board));
 });
 
+//renders highscore bored once refreshed
 function renderHighScoreBoard(){
     var sortedScore = board.sort(function(a,b){
         return b.score-a.score;
